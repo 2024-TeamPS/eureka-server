@@ -1,0 +1,12 @@
+server:
+  port: 8787  # Eureka 서버가 사용할 포트 번호
+
+# -- Eureka
+eureka:
+  instance:
+    hostname: 127.0.0.1  # Eureka 인스턴스의 호스트 이름
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # Eureka 서버의 서비스 URL
+    register-with-eureka: false  # Eureka 클라이언트로서 등록하지 않음
+    fetch-registry: false  # 다른 서비스의 레지스트리를 가져오지 않음
